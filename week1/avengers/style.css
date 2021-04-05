@@ -1,0 +1,49 @@
+html{
+    height: 100%;
+    width: 100%;
+
+}
+
+body{
+    margin-top: 0;
+    background-color: #0E2B46;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/418/472/1020/spider-man-movies-wallpaper-preview.jpg);
+    color: white;
+}
+
+a{
+ 
+        color: white;
+   
+}
+
+#history>div>img,#superPowers>div>img{
+    width: 40%;
+    height: 80%;
+}
+#history>div>p,#superPowers>div>p{
+    width: 40%;
+    height: 80%;
+}
+#history>div,
+#superPowers>div{
+    display: flex;
+    justify-content: space-around;
+    align-items :center;
+    background: -webkit-linear-gradient(red, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;   
+    font-size: medium;
+}
+
+h1{
+    font-family: 'Roboto', sans-serif;
+    background: -webkit-linear-gradient(blue, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;   
+}
