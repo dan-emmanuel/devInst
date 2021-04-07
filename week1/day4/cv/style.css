@@ -41,5 +41,55 @@ header{
     list-style: none;
 }
 
+article{
+    display: flex;
+    justify-content: center;
+}
 
+article>.title{
+    padding: 2em;
+    border-right : 1px solid black;
+    width:46%;
+    text-align:right
+}
+article>.content{
+    padding: 2em;
+    text-align: left;
+    width:70%;
+}
+
+
+article>.content>.language>h5{
+    width: 20%;
+
+}
+article>.content>.language>.slide{
+    width: 30%;
+    height: 1em;
+}
+.language{
+    display:flex;
+    align-items:center
+
+}
+
+.backgroundSlide{
+    background-color: #58595B;
+    width: 100%;
+    height: 100%;
+}
+.innerSlide{
+    background-color: #FACD48;
+    height: 100%;
+}
+
+.w100{
+  width: 100%;  
+}
+.w75{
+  width: 75%;  
+}
+.w50{
+  width: 50%;  
+}
 
