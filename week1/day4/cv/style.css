@@ -1,6 +1,14 @@
 html,body{
     height: 100%;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.flex{
+
+    display: flex;
+
 }
 
 #profilPic{
@@ -12,7 +20,6 @@ html,body{
 
 }
 header{
-    display: flex;
     justify-content: center;
     text-align: center;
 
@@ -22,13 +29,15 @@ header{
     position: relative;
     margin: 1em;
     overflow: hidden;
+    margin-top: 0;
 }
 #civilInfoDiv ul {
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-left: -3em;
+    margin-top: 0;
+
 }
 #civilInfoDiv li {
     flex-grow: 1;
@@ -39,10 +48,19 @@ header{
     border-left: 1px solid #ccc;
     background-color: #fff;
     list-style: none;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-weight: bold;
+}
+
+#civilInfoDiv a{
+    text-decoration: none;
+    color: black;
+
+
 }
 
 article{
-    display: flex;
     justify-content: center;
 }
 
@@ -51,11 +69,13 @@ article>.title{
     border-right : 1px solid black;
     width:46%;
     text-align:right
+
 }
 article>.content{
     padding: 2em;
     text-align: left;
     width:70%;
+    
 }
 
 
@@ -68,7 +88,6 @@ article>.content>.language>.slide{
     height: 1em;
 }
 .language{
-    display:flex;
     align-items:center
 
 }
@@ -93,3 +112,36 @@ article>.content>.language>.slide{
   width: 50%;  
 }
 
+.frame{
+    justify-content: space-between;
+    font-size: large;
+}
+
+h1,h2{
+    font-family: 'Poppins', sans-serif;
+}
+
+.jobTitle{
+    font-size: x-large;
+}
+
+dt{
+    font-weight: 600;
+}
+dd{
+    font-weight: 400;
+
+}
+
+.exp{
+    border-bottom:  black 1px dashed;
+}
+
+
+.exp{
+    border-bottom:  black 1px dashed;
+}
+
+.content{
+    border-bottom:  black 1px solid;
+}
