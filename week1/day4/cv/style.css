@@ -1,0 +1,45 @@
+html,body{
+    height: 100%;
+    margin: 0;
+}
+
+#profilPic{
+    border-radius: 50%;
+    width: 152px;
+    height: 152px;
+    transform: rotate(20deg);
+    margin:15px
+
+}
+header{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+#civilInfoDiv {
+    position: relative;
+    margin: 1em;
+    overflow: hidden;
+}
+#civilInfoDiv ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -3em;
+}
+#civilInfoDiv li {
+    flex-grow: 1;
+    flex-basis: auto;
+    margin: .25em 0;
+    padding: 0 1em;
+    text-align: center;
+    border-left: 1px solid #ccc;
+    background-color: #fff;
+    list-style: none;
+}
+
+
+
