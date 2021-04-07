@@ -1,5 +1,4 @@
 html,body{
-    height: 100%;
     margin: 0;
     font-family: 'Poppins', sans-serif;
 
@@ -10,18 +9,24 @@ html,body{
     display: flex;
 
 }
+header>.profilPic:first-child{
+    transform: rotate(20deg);
 
-#profilPic{
+}
+.profilPic{
     border-radius: 50%;
     width: 152px;
     height: 152px;
-    transform: rotate(20deg);
     margin:15px
 
 }
 header{
     justify-content: center;
     text-align: center;
+    /* position: -webkit-sticky; */
+    position: sticky;
+    top: 0;
+    background-color: white;
 
 }
 
