@@ -1,0 +1,134 @@
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+body,html{
+    margin: 0px;
+}
+nav{
+    width: 100%;
+    background-color:#F4F4F4;
+    padding-top:1.5vh;
+    padding-bottom:2.5vh;
+
+
+}
+
+h1{
+    text-align: center;
+}
+.navElem,.card{
+    display: inline-block;
+}
+.card{
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+
+    height: 30%;
+
+}
+main>.card:first-child{
+    margin-left: 1.5%;
+
+}
+main>.card:last-child{
+    margin-right: 1.5%;
+}
+.card{
+    width: 20%;
+    text-align: center;
+    position: inherit;
+
+}
+#navLinkRightContainer{
+    position: absolute;
+    right: 1%;
+}
+
+#logo{
+    position: absolute;
+    left: 1%;
+}
+footer{
+   
+   text-align: center;
+   background:#333333;
+   color: white;
+   padding-top:1.5vh;
+   padding-bottom:2.5vh;
+}
+
+
+
+.imagePrdoduct{
+    width: 100%;
+   
+}
+
+.addToCart{
+    margin-top: 5%;
+
+    border: 1px solid #58595B;
+    background-color: transparent;
+    padding: 3%;
+    text-transform: uppercase;
+    color:#58595B;
+
+}
+
+.addToCart:hover{
+    
+    color:white;
+    border: 1px solid #58595B;
+    background-color: #58595B;
+
+}
+
+.beforediscount{
+    text-decoration: line-through;
+}
+
+.discount{
+    color:#54B399
+    
+}
+
+.badge{
+    
+    position: relative;
+    top: 60px;
+    display: inline-block;
+    padding: .35em .65em;
+    font-size: .75em;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+
+
+.new{
+    left: 48%;
+    background-color:red ;
+    border-color:red ;
+
+    color: white;
+}
+.badge.discount{
+    right: 48%;
+    background-color:#54B399 ;
+    border-color:#54B399 ;
+
+    color: white;
+}
+main{
+    min-height: 89vh;
+}
