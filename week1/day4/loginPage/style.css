@@ -1,11 +1,14 @@
 
 body{
     font-family: 'Cairo', sans-serif;
+    height: 100vh;
+    margin: 0;
 }
 
 main{
     display: flex;
     height: 100vh;
+    margin: 0;
 
 }
 .halfPage{
@@ -100,4 +103,16 @@ form{
     border-radius: 50px;
     align-self: center;
     border: 3px solid;
+}
+
+.line{
+    width: 25%;
+    border-bottom: 1px solid black;
+}
+
+.lineStiled{
+    align-self: center;
+    width: 50%;
+    align-items: center;
+    justify-content: space-around;
 }
