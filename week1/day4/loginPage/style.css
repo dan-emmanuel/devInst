@@ -1,0 +1,103 @@
+
+body{
+    font-family: 'Cairo', sans-serif;
+}
+
+main{
+    display: flex;
+    height: 100vh;
+
+}
+.halfPage{
+    width: 50vw;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    flex-direction:column;
+    flex-flow: center;
+    justify-content: space-between;
+    height: 37vh;
+    width: 50%;
+    justify-content: space-around;
+    align-self: center;
+
+}
+
+
+.spaceBetween{
+    justify-content : space-between
+
+}
+.row{
+    display: flex;
+}
+
+#secondPart{
+    background: rgb(2,0,36);
+    background: linear-gradient(124deg, rgba(2,0,36,1) 0%, rgba(141,41,144,1) 35%);
+}
+
+.itemCenter{
+    align-items: center;
+}
+#logos{
+    width: 50%;
+    justify-content: space-around;
+    align-self: center;
+}
+
+#submit{
+    align-self: center;
+    width: 100%;
+    background-color: rgba(141,41,144,1);
+    color: white;
+    border: none;
+}
+
+
+.textsInputs{
+    background-color: #EEEEEE;
+    margin-top: .3em;
+    margin-bottom: .3em;
+    border: none;
+    height: 1.2em;
+  
+}
+
+#secondPart{
+    color: white;
+}
+
+.fa-user-plus{
+    font-size: 2em;;
+}
+
+#secondPart>h1{
+    margin-bottom : 0;
+    font-size: 2em;
+}
+
+#secondPart>p{
+    width: 45%;
+    align-self: center;
+    font-size: 1em;
+    margin-bottom : 5%;
+
+
+}
+
+#registerButon{    
+    background-color: Transparent;
+    color: white;
+    border-color: white;
+    width: 40%;
+    border-radius: 50px;
+    align-self: center;
+    border: 3px solid;
+}
