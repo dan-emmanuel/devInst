@@ -49,12 +49,9 @@ color: red;
 @media only screen and   (max-width:900px) {
         
     nav{
-        display: flex;
         flex-direction: column;
 
-        justify-content: space-around;
-        background-image: url(https://c4.wallpaperflare.com/wallpaper/418/472/1020/spider-man-movies-wallpaper-preview.jpg);
-        color: white;
+     
     }
     #history>div,#superPowers>div{
         flex-direction: column-reverse;
@@ -64,7 +61,7 @@ color: red;
         text-align: center;
     }
     #history>div>p,#superPowers>div>p{
-    text-align: justify;
-    text-justify: inter-word;
+        text-align: justify;
+        text-justify: inter-word;
     }
 }

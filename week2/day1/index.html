@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .gridContainer{
+            display:grid ;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: repeat(3 1fr) ;
+
+            grid-template-rows:  repeat(4 1fr);
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+
+            height: 300px;
+            width: 500px;
+
+
+           
+        }
+            .red{
+                background-color :#EA9999;
+
+            }
+            .blue{
+                background-color :#9FC5F8;
+            }
+            .yellow{
+                background-color :#FFE599;
+                grid-column: 2 span ;
+                grid-row: 1 span ;
+
+
+            }
+            
+            .child{
+                width: 100%;
+                height: 100%;
+
+            }
+            
+        
+    </style>
+    <div class="gridContainer">
+        <div class="child blue">
+        </div>
+        <div class="child red">
+        </div>
+        <div class="blue"> </div>
+
+        <div class="child red"></div>
+        <div class="child blue"></div>
+        <div class="child red"></div>
+        <div class="child yellow"></div>
+    </div>
+
+
+    <style>
+        .gridContainer2{
+            display:grid ;
+            grid-template:"blue blue blue " 
+                            "grey yellow yellow "
+                            "grey yellow yellow "
+                            "grey yellow yellow "
+                            "grey yellow yellow"
+                            "green yellow yellow"
+                            "green yellow yellow"
+                            "green dark dark"
+                            "green dark dark"
+                            "green dark dark"
+
+                            "green dark dark"
+                            "grass grass pink"
+                            "grass grass pink"
+                            "orange orange orange";
+
+
+
+
+
+
+            grid-gap: 5px;
+
+            height: 300px;
+            width: 400px;
+
+        }
+
+        .yellow2{
+            background-color :#FFE599;
+            grid-column: 2 span ;
+            grid-row: 2 span ;
+            grid-area: yellow;
+
+
+
+        }
+
+        .blue2{
+            background-color :#9FC5F8;
+            grid-column: 3 span ;
+            grid-area: blue;
+        }
+        .grey{
+            background-color: rgb(215,201,227);
+            grid-row : grey
+        }
+        
+        .green{
+            background-color: rgb(159,195,99);
+            grid-area: green;
+
+        }
+        .dark{
+            background-color: rgb(137,137,137);
+            grid-area: dark;
+
+        }
+        .grass{
+            background-color: rgb(43,182,115);
+            grid-area: grass;
+
+        }
+        .pink{
+            background-color: rgb(239,199,215);
+            grid-area: pink;
+
+        }
+        .orange{
+            background-color: rgb(245,198,50);
+            grid-area: orange;
+
+        }
+
+
+
+
+    </style>
+
+
+    <div style="height:300px"></div>
+
+    <div class="gridContainer2">
+        <div class="child blue2">
+        </div>
+        <div class="child grey">
+        </div>
+        <div class=" child yellow2"> </div>
+
+        <div class="child green"></div>
+        <div class="child dark"></div>
+        <div class="child grass"></div>
+        <div class="child pink"></div>
+        <div class="child orange"></div>
+
+    </div>
+
+
+</body>
+</html>
