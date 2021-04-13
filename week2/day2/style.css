@@ -2,25 +2,38 @@
 html,body{
     padding: 0px;
     margin: 0px;
+    font-family: ShopifySans, Helvetica, Arial, sans-serif;
+    font-weight: bolder;
 }
 
 section{
-    background-image: url(./assets/O9FG4R0.jpg);
+    background-image: url(./assets/O9FG4R0.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     height: 100vh;
     width: 100%;
     position: relative;
     background-position: center;
-
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
-
+.overlay{
+    height: 100%;
+    width: 100%;
+    background: rgba(245,246,250,.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between
+}
 
 h1{
     width: 40%;
     margin-left: 30%;
     text-align: center;
+    color: #3F454E;
 }
 
 
@@ -28,4 +41,94 @@ h1{
     display: flex;
     justify-content: space-around;
     text-align: center;
+}
+
+.numbers{
+    color: #5D6BC4;
+}
+
+.explainations{
+    color: #6F7B87;
+}
+
+.card-body{
+    color: #A3ACB3;
+    background-color: #FFFFFF;
+    height: 70%;
+    text-align: justify;
+    text-justify: inter-word;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    font-size: smaller;
+
+    box-sizing:border-box
+}
+
+.card-bottom{
+    color: #FFF2F1;
+    margin: 0;
+    box-sizing:border-box;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: 40%;
+    text-align: center;
+    font-size: smaller;
+
+}
+
+.card:nth-child(2){
+    align-self :flex-end
+}
+
+
+/* .overlay{
+    height: 100%;
+    width: 100%;
+    background: rgba(245,246,250);
+    opacity: .4;
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
+.testimony{
+    display: flex;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    justify-content: space-between;
+    height: 50%;
+    margin-bottom: 3%;  
+}
+
+.card{
+    width: 25%;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    height: 70%;
+    font-size: small;
+}
+
+.pink{
+    background-color: #FB8B8A;
+}
+
+.blue{
+    background-color: #5C6AC4;
+}
+
+.primary{
+    background-color: #47C1BF;
+}
+
+.card>*{
+    width: 100%;
+}
+
+.userName,.userTitle{
+    margin-top: 0;
+    margin-bottom:0 ;
 }
