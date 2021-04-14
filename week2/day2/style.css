@@ -12,21 +12,21 @@ section{
     background-repeat: no-repeat;
     height: 100vh;
     width: 100%;
-    position: relative;
+    position: absolute;
     background-position: center;
-    background-color: rgba(255, 255, 255, 0.7);
+    
 }
 
 .overlay{
-    height: 100%;
+    background-image: url(./assets/O9FG4R0.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
     width: 100%;
-    background: rgba(245,246,250,.4);
     position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction:column;
-    justify-content:space-between
+    background-position: center;
+    opacity: .5;
+    z-index: -1;
 }
 
 h1{
@@ -34,6 +34,8 @@ h1{
     margin-left: 30%;
     text-align: center;
     color: #3F454E;
+    font-size: 1.6em;
+    font-weight: bolder;
 }
 
 
@@ -41,14 +43,18 @@ h1{
     display: flex;
     justify-content: space-around;
     text-align: center;
+    font-size: 1em;
+    text-transform: uppercase;
 }
 
 .numbers{
+    font-size: 1.2em;
+
     color: #5D6BC4;
 }
 
 .explainations{
-    color: #6F7B87;
+    color: #474c52;
 }
 
 .card-body{
@@ -62,7 +68,11 @@ h1{
     padding-top: 1rem;
     font-size: smaller;
 
-    box-sizing:border-box
+    box-sizing:border-box;
+    border: 1px solid rgba(0,0,0,.125);
+
+    border-radius: .25rem .25rem 0px 0px ;
+
 }
 
 .card-bottom{
@@ -76,6 +86,9 @@ h1{
     height: 40%;
     text-align: center;
     font-size: smaller;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0px 0px .25rem .25rem;
+
 
 }
 
@@ -84,15 +97,7 @@ h1{
 }
 
 
-/* .overlay{
-    height: 100%;
-    width: 100%;
-    background: rgba(245,246,250);
-    opacity: .4;
-    position: absolute;
-    top: 0;
-    left: 0;
-} */
+
 
 .testimony{
     display: flex;
@@ -102,14 +107,22 @@ h1{
     justify-content: space-between;
     height: 50%;
     margin-bottom: 3%;  
+    margin-top: 3%;  
+
 }
 
 .card{
     width: 25%;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
+    
     height: 70%;
     font-size: small;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
 }
 
 .pink{
@@ -131,4 +144,18 @@ h1{
 .userName,.userTitle{
     margin-top: 0;
     margin-bottom:0 ;
+}
+
+.avatar{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    object-position: 100% 0;
+
+    position: absolute;
+  top: -30px;
+  left: 50%;
+  margin-left: -30px;
+  width: 60px !important;
+  height: 60px;
 }
