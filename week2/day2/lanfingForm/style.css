@@ -1,0 +1,97 @@
+html,body{
+    background-image: url( "./assets/23433.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto  100%;
+    width: 100vw;
+    margin: 0;
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+
+}
+
+nav{
+    text-align: center;
+    color: #ffff;
+    background-color: #32676D;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 5%), inset 0 -1px 0 rgb(0 0 0 / 10%);
+    min-height: 4rem;
+    margin-bottom: .5rem;
+}
+
+nav>h1{
+    margin-bottom: 1%;
+    margin-top: 0px;
+    font-size: .9em;
+
+
+}
+
+nav>button{
+    width: 100%;
+}
+
+form{
+    width: 50vw;
+    text-align: center;
+    margin-right: 25vw;
+    margin-left: 25vw;
+    display: grid;
+}
+
+li{
+    text-align: left;
+}
+
+h1{
+    width: 100%;
+    text-align: center;
+    
+}
+
+input{
+}
+
+label{
+}
+
+button,input[type=submit]{
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    cursor: pointer;
+    background-color: #00A1D8;
+    color: white;
+}
+
+main{
+    font-size: 100%;
+    margin-bottom: 5%;
+}
+
+.allRow{
+    width: 100%;
+    display: flex;
+    margin-bottom: 5%;
+
+}
+
+.tchat{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    background-color: #00A1D8;
+    color: white;
+    position: static;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    cursor: pointer;
+
+}
+
