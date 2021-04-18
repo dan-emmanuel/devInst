@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{height:100vh}
+        main{
+            height: 100%;
+            width: 100%;
+            display: flex;
+        }
+
+        .container{
+            display: flex;
+            width: 20%;
+            height: 100%;
+            justify-content: space-around;
+            align-items :center
+        }
+
+        #center{
+            width: 60%;
+
+        }
+        .yellow{
+            border: 1px solid black;
+            background-color: yellow;
+            width: 50px;
+            height: 50px;
+
+        }
+        #left,#right{
+            flex-direction: column
+        }
+    </style>
+
+    <main >
+    
+        <div class="container" id="left">
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+
+        </div>
+
+        <div class="container" id="center">
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+        </div>
+        <div class="container" id="right">
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+        </div>
+    </main>
+</body>
+</html>
