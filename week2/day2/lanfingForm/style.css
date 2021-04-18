@@ -113,6 +113,26 @@ main {
 
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 @media (min-width: 961px) {
+  nav{
+    display: flex;
+    justify-content: center;
+    padding: .5rem 1rem;
+
+    align-items:center
+  }
+  nav>*{
+    box-sizing: border-box;
+    line-height: 1.5;
+  }
+  nav>h1{
+    width:50%;
+    margin-top: auto;
+    margin-bottom: auto;
+
+  }
+  nav>button{
+    width: auto
+  }
   form {
     width: 80vw;
     text-align: left;
