@@ -17,28 +17,29 @@ console.log(thirdWord)
 
 // ex3
     // sum
-        let num1 = prompt(`waht's the first of the operation ?`)
-        let num2 = prompt(`waht's the second of the operation ?`)
+        let num1 = parseFloat(prompt(`waht's the first of the operation ?`))
+        // I use parseFloat in case of NaN prompedm or decimal numbers
+        let num2 = parseFloat(prompt(`waht's the second of the operation ?`))
 
         let sum = num1+num2
         alert(sum)
 
     // substract
-         num1 = prompt(`waht's the first of the operation ?`)
-         num2 = prompt(`waht's the second of the operation ?`)
+         num1 = parseFloat(prompt(`waht's the first of the operation ?`))
+         num2 = parseFloat(prompt(`waht's the second of the operation ?`))
 
         let diff = num1-num2
         alert(diff)
 
     // multiply
-         num1 = prompt(`waht's the first of the operation ?`)
-         num2 = prompt(`waht's the second of the operation ?`)
+         num1 = parseFloat(prompt(`waht's the first of the operation ?`))
+         num2 = parseFloat(prompt(`waht's the second of the operation ?`))
 
         let product = num1*num2
         alert(product)
     // divied
-         num1 = prompt(`waht's the first of the operation ?`)
-         num2 = prompt(`waht's the second of the operation ?`)
+         num1 = parseFloat(prompt(`waht's the first of the operation ?`))
+         num2 = parseFloat(prompt(`waht's the second of the operation ?`))
 
         let quotient = num1/num2
         alert(quotient)
