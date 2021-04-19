@@ -65,7 +65,7 @@ numbers.forEach(element => {
 });
 
 console.log(sum)
-let sentence
+let sentence = ""
 // ex Boom\
 let numberofo  = parseInt( prompt(`how many o you want ?`))
 if(numberofo<2){
@@ -79,7 +79,7 @@ if(numberofo%2==0){
     sentence+=`!`
 }
 
-if(numberofo%10==0){{
+if(numberofo%5==0){
     sentence.toUpperCase()
 }
 
