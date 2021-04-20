@@ -1,5 +1,12 @@
+body{
+  font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+
 #coverContainer{
-background-image: url(./assets/laptop-336704.jpg);
+background-image: url(./assets/candidates.jpg);
 background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; 
@@ -49,7 +56,7 @@ body {
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
+  border-bottom-color: #808c6e;
 }
 
 .nav-masthead .nav-link + .nav-link {
@@ -58,9 +65,13 @@ body {
 
 .nav-masthead .active {
   color: #fff;
-  border-bottom-color: #fff;
+  border-bottom-color: #A3DA53;
 }
 
+.nav-masthead .active:hover {
+  color: #fff;
+  border-bottom-color: #A3DA53;
+}
 
 .px-13{
   padding-left: 13rem ;
@@ -88,4 +99,24 @@ body {
 
 .text-info{
   color: #88A4D0!important;
+}
+
+span.nav-link{
+  color:#9d9ea2;
+  text-transform: lowercase!important;
+  font-style: italic;
+}
+.greyer{
+  color: #bababa !important
+}
+
+.green{
+  color: #8ac03c !important;
+}
+
+.greenBg{
+  background-color: #8ac03c !important;
+}
+button.greenBg:hover{
+  background-color: #A3DA53!important;
 }
