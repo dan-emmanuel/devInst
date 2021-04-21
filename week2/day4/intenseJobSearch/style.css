@@ -10,7 +10,7 @@ background-image: url(./assets/candidates.jpg);
 background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; 
-  height: 100vh!important;
+  height: 75vh!important;
 
 }
 
@@ -119,4 +119,61 @@ span.nav-link{
 }
 button.greenBg:hover{
   background-color: #A3DA53!important;
+}
+
+
+
+.rowIcone{
+  font-size: 60px;
+  line-height: 60px
+}
+
+.greenBarMessage{
+  position: relative;
+  padding-bottom: 40px;
+  font-size:  1.5rem
+}
+.greenBarMessage:before{
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 20px;
+  height: 1px;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 25%;
+
+  border-bottom: 4px solid #ffff;
+}
+
+.titlerowed{
+  position: relative;
+  padding-bottom: 2%;
+}
+.titlerowed:before{
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 1%;
+  height: 1px;
+  width: 5%;
+  margin-left: 48%;
+  margin-top: 25%;
+
+  border-bottom: 4px solid black;
+}
+
+.rotate-270{
+  transform: rotate(
+    270deg
+    );
+    
+}
+
+.yellowPlane{
+  color: #cdc67b
+}
+
+.redFire{
+  color:#b5757f
 }
