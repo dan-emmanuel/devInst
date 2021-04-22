@@ -44,6 +44,9 @@ if(typeof number=="number"){
         console.log(`x is an odd number`)
 
     }
+}else{
+    console.log(`x is not a number`)
+
 }
 
 
