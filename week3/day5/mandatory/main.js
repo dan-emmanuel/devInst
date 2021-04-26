@@ -92,9 +92,10 @@ console.log(Object.values(famillY))
 
 let names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"]
 
-function myFunction(total, value) {
-    return total + value[0];
+function myFunction(total, value,index,array) {
+    array==0
+    return total+value[0];
 }
 
-let groupName = names.reduce(myFunction);
+let groupName = names.reduce(myFunction,"");
 console.log(groupName)

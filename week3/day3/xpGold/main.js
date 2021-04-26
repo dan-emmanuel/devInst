@@ -30,7 +30,7 @@ let zip = prompt("your zip code ?")
 
 // 1stWay
 
-if((zip-9999)>0&&(zip-99999<0)){
+if((zip-9999)>0&&(zip-99999)<0){
     console.log(`this a correctZipCode`)
 }else{
     console.log(`no correctZipCode`)
