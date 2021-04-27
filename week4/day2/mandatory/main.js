@@ -20,9 +20,9 @@ infoAboutMe();
 // infoAboutPerson("David", 45, "blue")
 // infoAboutPerson("Josh", 12, "yellow")
 
-// function infoAboutPerson(personName, personAge, personFavoriteColor) {
-//    console.log( `Hi, I'm ${personName}, I'm ${personAge} and my favorite color is ${personFavoriteColor}.`)
-// }
+function infoAboutPerson(personName, personAge, personFavoriteColor) {
+   console.log( `Hi, I'm ${personName}, I'm ${personAge} and my favorite color is ${personFavoriteColor}.`)
+}
 
 // infoAboutPerson("Dan", 30, "blue");
 
@@ -38,8 +38,8 @@ infoAboutMe();
 // infoAboutPerson("Josh", 12, "yellow", ["videoGame", "hanging out with friends", "playing cards"])
 
 function infoAboutPerson(personName, personAge, personFavoriteColor,hobbies) {
-	// console.log(hobbies)
-	hobbies.forEach((element) => {console.log(element)});
+	console.log(hobbies)
+	// hobbies.forEach((element) => {console.log(element)});
 	console.log( `Hi, I'm ${personName}, I'm ${personAge} and my favorite color is ${personFavoriteColor}.`)
 
 }
