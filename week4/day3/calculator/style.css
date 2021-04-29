@@ -1,0 +1,56 @@
+*{
+    font-family: 'PT Sans', sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+main{
+    width: 50vw;
+    width: 50vh;
+
+
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+
+    border: 1rem solid #FAFFC9 ;
+    margin:auto;
+  
+
+
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    ;
+}
+
+
+.reader{
+    grid-column: 1 / span 4
+}
+
+.number{
+ background-color: #26C281;
+}
+.operander{
+    background-color: #F89406;
+
+}
+.mainComl{
+    grid-column:  span 2;   
+
+    background-color: #446CB3;
+
+}
+.mainComr{
+    grid-column:  span 2;   
+
+    background-color: #F22613;
+
+}
+input[type="button"]{
+    color: white;
+}
