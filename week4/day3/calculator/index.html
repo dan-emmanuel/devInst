@@ -6,31 +6,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="style.css">
-        <title>Game Javascript</title>
+        <title>Calculator</title>
     </head>
 
     <body>
+
         <main>
-            <input type="text" readonly name="" class="reader" id="">
+
+            <!-- <input type="text" readonly name="" class="tempVal" value="0" > -->
+            <span id="formerCalc"></span>
+            <input type="text" readonly name="" class="reader" value="0" >
             
-            <input type="button"  name="" class ="number" value="0">
-            <input type="button"  name="" class ="number" value="1">
-            <input type="button"  name="" class ="number" value="2">
-            <input type="button"  name="" class ="number" value="3">
-            <input type="button"  name="" class ="number" value="4">
-            <input type="button"  name="" class ="number" value="5">
-            <input type="button"  name="" class ="number" value="6">
-            <input type="button"  name="" class ="number" value="7">
-            <input type="button"  name="" class ="number" value="8">
-            <input type="button"  name="" class ="number" value="9">
-            <input type="button"  name="" class ="number" value=".">
-            <input type="button"  name="" class ="operander" value="+">
-            <input type="button"  name="" class ="operander" value="-">
-            <input type="button"  name="" class ="operander" value="*">
-            <input type="button"  name="" class ="operander" value="/">
-            <input type="button"  name="" class ="operander" value="=">
-            <input type="button"  name="" class ="mainComl" value="=">
-            <input type="button"  name="" class ="mainComr" value="=">
+            <input type="button" onclick="actionButt(this)"  name="" class ="number test" value="0">
+            <input type="button" onclick="actionButt(this)"  name="" class ="number" value="1">
+            <input type="button" onclick="actionButt(this)"  name="" class ="number" value="2">
+            <input type="button" onclick="actionButt(this)"  name="" class ="number" value="3">
+            <input type="button" onclick="actionButt(this)"  name="" class ="number" value="4">
+            <input type="button" onclick="actionButt(this)"  name="" class ="number" value="5">
+            <input type="button" onclick="actionButt(this)"  name="" class ="number" value="6">
+            <input type="button" onclick="actionButt(this)"  name="" class ="number" value="7">
+            <input type="button" onclick="actionButt(this)"  name="" class ="number" value="8">
+            <input type="button" onclick="actionButt(this)"  name="" class ="number" value="9">
+            <input type="button" onclick="actionButt(this)"  name="" class ="number" value=".">
+            <input type="button" onclick="actionButt(this)"  name="" class ="operander" value="+">
+            <input type="button" onclick="actionButt(this)"  name="" class ="operander" value="-">
+            <input type="button" onclick="actionButt(this)"  name="" class ="operander" value="*">
+            <input type="button" onclick="actionButt(this)"  name="" class ="operander" value="/">
+            <input type="button" onclick="actionButt(this)"  name="" class ="operander" value="=">
+            <input type="button" onclick="actionButt(this)"  name="" class ="mainComl" value="reset">
+            <input type="button" onclick="actionButt(this)"  name="" class ="mainComr" value="Clear">
 
 
 
@@ -39,6 +43,8 @@
             
 
         </main>
+
+        <script src="main.js"></script>
     </body>
 
 

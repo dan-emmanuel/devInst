@@ -8,23 +8,18 @@ body{
 }
 
 main{
-    width: 50vw;
-    width: 50vh;
+    min-width: 30vw;
+    height: 30vw;
 
 
     
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: 1fr repeat(6, 2fr);
 
     border: 1rem solid #FAFFC9 ;
     margin:auto;
   
-
-
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    ;
 }
 
 
