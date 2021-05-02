@@ -55,7 +55,6 @@ function operander(val) {
               num1 = parseFloat(num2) + parseFloat(num1);
             break;
             case "-":
-              console.log(index)
               num1 = parseFloat(num2) + parseFloat(-num1);
 
             break;
