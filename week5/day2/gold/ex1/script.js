@@ -1,0 +1,1 @@
+document.querySelector("select").addEventListener("change",evt=>document.querySelector(`#selectedopt`).value=evt.target.value)
