@@ -13,3 +13,38 @@ header {
 }
 
 
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #212529!important;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    right: -15px;
+    
+}
+
+.accordion-button::after{
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Plus_symbol.svg/750px-Plus_symbol.svg.png)
+}
+
+.accordion-button:not(.collapsed) {
+    color:#212529;
+    border: 0;
+}
+
+.accordion-button::after {
+    color:#212529;
+    box-shadow:0 0 0 0 !important;
+
+}
+.accordion-button:not(.collapsed)::after{
+    box-shadow:0 0 0 0 !important;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/ec/Minus_symbol.svg)!important;
+    box-shadow: 0 0 0 0 !important
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0 !important
+
+}
