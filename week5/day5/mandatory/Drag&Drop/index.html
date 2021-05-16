@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  #bigOne{
+    width: 200px;
+    height: 200px;
+    border: 1px black solid;
+    background-color: blue;
+  }
+
+  #smallOne{
+    width: 190px;
+    height: 190px;
+    border: 1px black solid;
+    background-color: red;
+    margin-top: 100px;
+  }
+</style>
+<body>
+
+  <div id="bigOne" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+  </div>
+
+  <div id="smallOne" draggable="true" ondragstart="drag(event)">
+
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
