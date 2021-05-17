@@ -1,0 +1,32 @@
+#container{
+
+    height: 80vh;
+    width: 80vw;
+    margin-top: 10vh;
+    margin-left: 10vw;
+    border: 3px black solid;
+    display: flex;
+   
+}
+
+.gid{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: repeat(7,1fr);
+
+    
+}
+
+
+
+
+.toStar{
+    border: 1px solid white;
+    background-color: black;
+    color: red;
+}
+
+
+
