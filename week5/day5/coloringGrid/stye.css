@@ -1,0 +1,44 @@
+#container{
+
+    height: 80vh;
+    width: 80vw;
+    margin-top: 10vh;
+    margin-left: 10vw;
+    border: 3px black solid;
+    display: flex;
+   
+}
+
+.gid1{
+    width: 10%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(8,1fr);
+    column-gap: 10px;
+    row-gap: 15px;
+    
+}
+.gid2{
+    width: 90%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(60,1fr);
+    grid-template-rows: repeat(25,1fr);
+
+}
+
+
+
+.tocolor{
+    border: 1px solid black;
+}
+
+button{
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.colorizer{
+    border: 1px solid black;
+}

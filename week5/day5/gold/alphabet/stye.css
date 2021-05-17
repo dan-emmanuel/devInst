@@ -1,0 +1,20 @@
+.grid{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(5,1fr);
+    padding: 5% 25% 5% 25%;
+    column-gap: 10px;
+    row-gap: 15px;
+    position: relative;
+    
+}
+
+.letterBox{
+    position: fixed ;
+    width: 70px;
+    height: 70px;
+    border: 2px solid black;
+    line-height: 70px;
+    text-align: center;
+
+}
