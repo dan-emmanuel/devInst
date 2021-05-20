@@ -3,15 +3,14 @@ for (let index = 0; index < letterBox.length; index++) {
   const element = letterBox[index];
 
   element.addEventListener("dragend",function (event) {
-      let x = event.screenX ;
-      let y = event.screenY  ;
+      let x = event.clientX ;
+      let y = event.clientY  ;
 
-      console.log(x)
-      console.log(y)
-
+      box = event.target.getBoundingClientRect()
 
       event.target.style.top = `${y}px`;
-      event.target.style.right = `${x}px`;
+      event.target.style.left = `${x}px`;
+      event.target.style.position = "absolute"
     },
     false
   );

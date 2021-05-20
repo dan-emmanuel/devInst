@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+}
+
+#container{
+
+    background-color: #5470B0;
+    position: relative;
+    width:100vw;
+    height:100vw
+
+    
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    color: #BDFCED;
+    font-weight: bold;
+    font-size: 3em;
+    line-height: 100px;
+    text-align: center;
+    float: left;
+}
+
+#addAbox{
+    background-color: #00DECF;
+
+}
