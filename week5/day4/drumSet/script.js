@@ -1,28 +1,70 @@
-let adder  = document.querySelector(`#addAbox`)
-let container = document.querySelector(`#container`)
-let colors  = ["00DECF"]
-let addAbox = ()=>{
-  let newDiv = document.createElement("div")
+let drums = document.querySelectorAll(".drum")
 
-  let  generateRandomColor =()=>{
-    let  randomColor
-    do {
-      randomColor = Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
-    } while (colors.includes());
-    return randomColor;
-    //random color will be freshly served
+
+function hasClass(ele,cls) {
+  return !!ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+  if (!hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
   }
-  let currentColor = generateRandomColor()
-  colors.push(currentColor)
-  newDiv.className = "box"
-  console.log(`#${currentColor}`)
-  newDiv.style.backgroundColor = `#${currentColor}`
-  container.append(newDiv)
-  console.log(newDiv)
+}
 
+
+let clickaBox = (e)=>{
+  e.preventDefault()
+  e.stopPropagation();
+  let element
+  let currentKey
+  if(e.type=="click"){
+    element = e.currentTarget
+    currentKey = e.currentTarget.querySelector('.note')
+    nexStep = true
+  }else{
+    currentKey = document.querySelector(`[data-target = "${keySounds[e.key]}"]`)
+    element = currentKey.closest(`.drum`)
+  }
+  if(currentKey!=null&&element!=null){
+    let currentAudio  = currentKey.getAttribute("data-target")
+    addClass(element,"onPlay")
+
+    setTimeout(() => {
+      removeClass(element,"onPlay")
+    }, 100);
+    
+    player(currentAudio)
+  }
+}
+
+let player = (target)=>{
+  let currentSound = document.querySelector(`[data-soundName = "${target}"]`)
+  currentSound.play()
 }
 
 
 
+let keySounds = {
+  a : "boom",
+  s : "clap",
+  d : "hiHat",
+  f : "kick",
+  g : "openHat",
+  h : "ride",
+  j : "snare",
+  k : "tink",
+  l : "tom"
+}
 
-adder.addEventListener("click",addAbox)
+
+
+drums.forEach(drum => {
+  drum.addEventListener("click",clickaBox)
+});
+
+document.addEventListener("keydown",clickaBox)
