@@ -1,0 +1,10 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(./images/nainoa-shizuru-NcdG9mK3PBY-unsplash.jpg);
+    background-attachment: fixed;
+    background-size: contain;
+    background-position: center;
+}
