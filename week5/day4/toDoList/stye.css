@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    height: 100vh;
+    background-color: #FF4C54;
+}
+
+
+
+.deleter{
+    background-color: #FF4C54;
+
+}
+
+
+
+#adder{
+    color: #A7D0FF;
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
