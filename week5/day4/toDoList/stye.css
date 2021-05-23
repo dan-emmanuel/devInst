@@ -24,3 +24,18 @@ body {
     outline: 0;
     box-shadow: 0 0 0 0;
 }
+
+.textPink{
+    color: #FF4C54;
+
+}
+
+#removeAll{
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+
+#taskName{
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
