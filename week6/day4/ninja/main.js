@@ -19,5 +19,5 @@ function mergeWords(string) {
    
 
 
-let  mergeWordsNway = string => string2=> string2==undefined?string:mergeWords(`${string} ${string2}`)
-console.log(mergeWords('There')('is')('no')('spoon.')())
+let  mergeWordsNway = string => string2=> string2==undefined?string:mergeWordsNway(`${string} ${string2}`)
+console.log(mergeWordsNway('There')('is')('no')('spoon.')())
