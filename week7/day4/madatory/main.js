@@ -85,15 +85,15 @@ class Animal  {
 
 class Mamal  extends Animal {
     constructor(name , type ,color,sound) {
-      super(nom); // appelle le constructeur parent avec le paramètre
-      this.sound = sound,
-      displayType =  function() {l
-        console.log(this.type);
+      super(name,type,color,); // appelle le constructeur parent avec le paramètre
+      this.sound = sound;
+      function  displaySound () {
+        console.log(this.sound);
       }
     }
     
   }
 
-  const cow = new Mamal("margueritte","cow","brown");
+  const cow = new Mamal("margueritte","cow","brown","meuhhhh");
 
   console.log(cow)
