@@ -46,6 +46,13 @@ class Person {
 // letex5
 
   // 2
+
+  class Dog {
+    constructor(name) {
+      this.name = name;
+    }
+  };
+
   class Labrador extends Dog {
     constructor(name, size) {
       super(name);
@@ -53,11 +60,6 @@ class Person {
     }
   };
 
-  class Dog {
-    constructor(name) {
-      this.name = name;
-    }
-  };
 
 //   Exercise 6 : Challenges
 
