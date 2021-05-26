@@ -1,28 +1,39 @@
-// part I
+// Create a class named Video. 
+// The class should be constructed with the following parameters:
+// title (a string)
+// uploader (a string, the person who uploaded it)
+// time (a number, the duration of the video - in seconds)
+// Create a method called watch() which displays a string as follows:
+// “uploader parameter watched all time parameter of title parameter!”
+// Instantiate a new Video instance and call the watch() method.
+// Instantiate a second Video instance with different values.
+// Bonus: Use an array to store data for five Video instances (ie. title, uploader, time)
+// Think of the best data structure to save this information within the array.
+// Bonus: Loop through the array to instantiate those instances.
 
-let inventory = [
-  { id: 1, car_make: "Lincoln", car_model: "Navigator", car_year: 2009 },
-  { id: 2, car_make: "Mazda", car_model: "Miata MX-5", car_year: 2001 },
-  { id: 3, car_make: "Honda", car_model: "Accord", car_year: 1983 },
-  { id: 4, car_make: "Land Rover", car_model: "Defender Ice Edition", car_year: 2010 },
-  { id: 5, car_make: "Honda", car_model: "Accord", car_year: 1995 },
-];
-
-let getCarHonda =(inventory)=>{ 
-  let firstHond  = inventory[inventory.map(function(e) { return e.car_make; }).indexOf('Honda')]
-  return `This is a ${firstHond.car_make} ${firstHond.car_model} from ${firstHond.car_year}.`
+class Video {
+  constructor(title, uploader,time) {
+    this.title = title;
+    this.uploader = uploader;
+    this.time = time
+  }
+  watch(){
+    console.log(`${this.uploader} watched all ${this.time} of ${this.title}!`) 
+  }
 }
 
-console.log(getCarHonda(inventory))
+let video1  = new Video("cat","john","1:00:00");
+let video2  = new Video("dog","jane","00:30:00");
 
 
-// part II
+let videos = [
+              {title:"pig",uploader:"mary",time:"2:00:00"},
+              {title:"monkey",uploader:"marc",time:"00:45:00"},
+              {title:"duck",uploader:"mike",time:"00:15:00"},
+              {title:"fourmiz",uploader:"nigel",time:"00:25:00"},
+              {title:"hornet",uploader:"lila",time:"00:30:00"}
+            ]
 
-let sortCarInventoryByYear =(array)=>{
-  return array.sort((a,b)=>{
-  if(a.car_year > b.car_year) return 1;
-  if(a.car_year < b.car_year) return -1;
-  return 0;})
-}
+let [v3,v4,v5,v6,v7] = videos.map(({title,uploader,time})=> new Video(title,uploader,time))
 
-console.log(sortCarInventoryByYear(inventory))
+console.log(v4,v3,v5,v6,v7)
