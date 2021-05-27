@@ -26,17 +26,16 @@ let quotes = {
         type:"button",
         onclick:(e)=>{
           document.querySelector(`#quoteAuthorInput`).value= opt.textContent
-          document.querySelector(`#quoteAuthorInput`).setAttribute('data-indexSameAuthor', opt.getAttribute("data-indexSameAuthor"))
           document.querySelector(`#quoteAuthorHelper`).innerHTML=``
         },
         textContent: 	text}
       )
       opt.style.width=`${document.querySelector(`#quoteAuthorInput`).clientWidth}px`
-      let sameAuthorIndexs = matchedQuote(opt.textContent).map(quote=>quotes.lists.indexOf(quote))
-      opt.setAttribute('data-indexSameAuthor', `${sameAuthorIndexs.join(",")}`)
 
       return opt
     }
+
+    let sameAuthorIndexs =()=> matchedQuote(opt.textContent).map(quote=>quotes.lists.indexOf(quote))
 
     
 
