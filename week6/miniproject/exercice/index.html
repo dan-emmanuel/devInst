@@ -19,58 +19,85 @@
 
 
 <body>
-	<div class="container ">
-		<h1 class="text-center text-white">Quote gen</h1>
+	<div class="container my-auto">
 
 
 
-		<div class="p-5 mb-4 bg-dark text-white rounded-3">
-			<div class="container-fluid py-5 col-9" id="quotesList">
-				
-	
+		<div class="p-5 mb-4 bg-dark text-white rounded-3 ">
+			<h1 class="text-center text-white">Quote generator</h1>
+			<div class="container-fluid py-1 col-9">
+				<form autocomplete="off" id="authorFind" class="row row-cols-lg-auto g-3 align-items-center justify-content-center ">
+					<div class="col-12">
+						<label class="col-auto col-form-label col-form-label-sm">Quote Author</label>
+
+					</div>
+					<div class="col-12 position-relative">
+						<label class="visually-hidden" >Albert Einstein</label>
+						<input type="text" class="form-control" id="quoteAuthorInput"
+							placeholder="Username">
+						<div class="list-group list-group-flush position-absolute " id="quoteAuthorHelper">
+							
+						</div>
+
+					</div>
+
+					<div class="col-12">
+						<button type="submit" class="btn btn-outline-primary col-auto ">Submit</button>
+					</div>
+
+				</form>
 			</div>
-			<div class="d-flex justify-content-between align-items-center col-8 mt-5 mx-auto">
-				<button class="btn btn-outline-primary col-auto disabled" id="previousQuote" type="button">previousquote quote</button>
+
+
+
+			<div class="container-fluid py-5 col-9" id="quotesList">
+
+
+			</div>
+			<div class="d-flex justify-content-between align-items-center col-8 mt-1 mx-auto">
+				<button class="btn btn-outline-primary col-auto disabled" id="previousQuote" type="button">previousquote
+					quote</button>
 				<button class="btn btn-outline-primary col-auto" id="nextQuote" type="button">next quote</button>
-				<button class="btn btn-outline-primary col-auto" id="newQuote" type="button"  data-bs-toggle="modal" data-bs-target="#newQoteModal">new quote</button>
+				<button class="btn btn-outline-primary col-auto" id="newQuote" type="button" data-bs-toggle="modal"
+					data-bs-target="#newQoteModal">new quote</button>
 
 			</div>
 		</div>
 
-	
+
 
 
 
 	</div>
 
-	<div class="modal fade" id="newQoteModal"  tabindex="-1"  aria-hidden="true">
+	<div class="modal fade" id="newQoteModal" tabindex="-1" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <h5 class="modal-title" id="staticBackdropLabel">Add a new Quote</h5>
-			  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Add a new Quote</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
 					<div class="form-floating">
 						<textarea class="form-control" name="quoteText"></textarea>
 						<label for="floatingTextarea">quote text</label>
 						<div id="validationServerUsernameFeedback" class="invalid-feedback">
 							Mandatory field.
 						</div>
-					</div>		
+					</div>
 					<div class="form-floating mt-3">
 						<input class="form-control" name="quoteAuthor"></input>
 						<label for="floatingTextarea">quote author</label>
 						<div id="validationServerUsernameFeedback" class="invalid-feedback">
 							Mandatory field.
 						</div>
-					</div>		
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" id="saveNewQuote" class="btn btn-primary">add</button>
+				</div>
 			</div>
-			<div class="modal-footer">
-			  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-			  <button type="button" id="saveNewQuote" class="btn btn-primary">add</button>
-			</div>
-		  </div>
 		</div>
 	</div>
 	<!-- JavaScript Bundle with Popper -->

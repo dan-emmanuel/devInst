@@ -1,3 +1,10 @@
+
+body{
+    margin: 0;
+}
+
+
+
 .grid{
     display: grid;
     grid-template-columns: repeat(6,1fr);
@@ -17,3 +24,4 @@
     text-align: center;
 
 }
+

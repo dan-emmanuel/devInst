@@ -1,6 +1,7 @@
 let previousButton = document.querySelector("#previousQuote");
 let nextQuote = document.querySelector("#nextQuote");
 let saveNewQuote = document.querySelector("#saveNewQuote")
+let authorlist = document.querySelector(`#quoteAuthorHelper`)
 let newQoteModal = new bootstrap.Modal(document.getElementById('newQoteModal'))
 let quotes = {
   formers: [],
@@ -14,6 +15,40 @@ let quotes = {
     return toReturn
    }
   },
+  optionHelperGen(authorTofind){
+    let buttons =[]
+
+    let matchedQuote =(authorVal)=> quotes.lists.filter(({author})=>author.toLowerCase().includes(authorVal.toLowerCase()))
+    let createOption =(text)=>{ 
+      let opt =  Object.assign(document.createElement("button"), {
+        className: "list-group-item list-group-item-action",
+        ariaCurrent:"true",
+        type:"button",
+        onclick:(e)=>{
+          document.querySelector(`#quoteAuthorInput`).value= opt.textContent
+          document.querySelector(`#quoteAuthorInput`).setAttribute('data-indexSameAuthor', opt.getAttribute("data-indexSameAuthor"))
+          document.querySelector(`#quoteAuthorHelper`).innerHTML=``
+        },
+        textContent: 	text}
+      )
+      opt.style.width=`${document.querySelector(`#quoteAuthorInput`).clientWidth}px`
+      let sameAuthorIndexs = matchedQuote(opt.textContent).map(quote=>quotes.lists.indexOf(quote))
+      opt.setAttribute('data-indexSameAuthor', `${sameAuthorIndexs.join(",")}`)
+
+      return opt
+    }
+
+    
+
+    matchedQuote(authorTofind).forEach(({author})=>{
+      let alreadyIn = buttons.some( button => button.textContent==author)
+      if(!alreadyIn){
+        buttons.push(createOption(author))
+      }
+    })
+    return buttons
+  },
+  
   currentPosition: -1
 };
 
@@ -29,7 +64,7 @@ class Quote {
 
   feedElem() {
     this.elemMainDom = Object.assign(document.createElement("div"), {
-      className: "col- 8 py-4 quoteText d-flex flex-column align-items-center border border-white rounded py-2",
+      className: "py-4 quoteText d-flex flex-column align-items-center border border-white rounded",
     });
     this.openQuoteSign = Object.assign(document.createElement("i"), {
       className: "fas fa-quote-left pe-2",
@@ -124,9 +159,7 @@ class Quote {
     });
     
     let  popoverTriggerList = [].slice.call(this.elemMainDom.querySelectorAll('[data-bs-toggle="popover"]'))
-    let  popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-      return new bootstrap.Popover(popoverTriggerEl)
-    })
+    popoverTriggerList.forEach((popoverTriggerEl)=>{return new bootstrap.Popover(popoverTriggerEl)})
 
 
 
@@ -154,14 +187,7 @@ new Quote({
   text: "The secret of success is to do the common thing uncommonly well.",
   author: "John D. Rockefeller Jr",
 });
-new Quote({
-  text: "I find that the harder I work, the more luck I seem to have.",
-  author: "Thomas Jefferson",
-});
-new Quote({
-  text: "I find that the harder I work, the more luck I seem to have.",
-  author: "Thomas Jefferson",
-});
+
 new Quote({
   text: "I find that the harder I work, the more luck I seem to have.",
   author: "Thomas Jefferson",
@@ -170,8 +196,49 @@ new Quote({
   text: "The real test is not whether you avoid this failure, because you won't. It's whether you let it harden or shame you into inaction, or whether you learn from it; whether you choose to persevere.",
   author: "Barack Obama",
 });
+new Quote({
+  text: "Do not go where the path may lead, go instead where there is no path and leave a trail.",
+  author: "Ralph Waldo Emerson",
+});
+new Quote({
+  text: "It is during our darkest moments that we must focus to see the light." ,
+  author: "Aristote",
+});
+new Quote({
+  text: "What is a friend? A single soul dwelling in two bodies." ,
+  author: "Aristote",
+});
+new Quote({
+  text: "Educating the mind without educating the heart is no education at all." ,
+  author: "Aristote",
+});
 
 
+let feedHelper = (e)=>{
+
+  let input = e.target
+  let curentLooked = input.value
+  console.log(quotes.lists.filter(({author})=>author.toLowerCase()==curentLooked.toLowerCase()).length==0)
+  if(quotes.lists.filter(({author})=>author.toLowerCase()==curentLooked.toLowerCase()).length==0){
+    authorlist.innerHTML=``
+    
+    let opts = quotes.optionHelperGen(curentLooked,input)
+    if(opts.length>0){
+      opts.forEach(buton=>authorlist.append(buton))
+    }else{
+
+    }
+  }
+  
+}
+
+let feedOutHelper = (e)=>{
+  const isNotHover = document.querySelector('#quoteAuthorHelper:hover')=== null
+  if(isNotHover){
+    authorlist.innerHTML=``
+  }
+  
+}
 let newQuote = (e)=>{
   document.querySelector(`#quotesList`).innerHTML = "";
   const quoteIncrement  = ()=>{
@@ -201,7 +268,7 @@ let newQuote = (e)=>{
   ?quoteIncrement()
   :quoteDecrement()
 }
-addAquote = (e)=>{
+let addAquote = (e)=>{
   let quoteText = document.querySelector(`[name=quoteText]`)
   let quoteAuthor = document.querySelector(`[name=quoteAuthor]`)
   let continueQuoteCreation = quoteText.value.length != 0&&quoteAuthor.value.length != 0
@@ -209,12 +276,6 @@ addAquote = (e)=>{
   if(quoteAuthor.value.length==0){quoteAuthor.classList.add("is-invalid")}
   if(continueQuoteCreation){
   
-    console.log(  
-      new Quote({
-      text: quoteText.value,
-      author: quoteAuthor.value,
-      })
-    )
     quoteText.value = ""
     quoteAuthor.value = ""
     quoteText.classList.remove("is-invalid")
@@ -223,9 +284,19 @@ addAquote = (e)=>{
   }
 
 }
+
+
+
+
+
 newQuote()
 nextQuote.addEventListener("click",newQuote);
 previousButton.addEventListener("click",newQuote);
 saveNewQuote.addEventListener(`click`,addAquote)
+
+let authorInput = document.querySelector(`#quoteAuthorInput`)
+
+authorInput.addEventListener("input",feedHelper)
+authorInput.addEventListener("focusout",feedOutHelper)
 
 
