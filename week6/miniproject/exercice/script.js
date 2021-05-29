@@ -223,9 +223,6 @@ new Quote({
   author: "Aristote",
 });
 
-
-
-
 let feedHelper = (e)=>{
   let curentLooked = authorInput.value
   if(quotes.lists.filter(({author})=>author.toLowerCase()==curentLooked.toLowerCase()).length==0){
@@ -311,10 +308,6 @@ let addAquote = (e)=>{
   }
 
 }
-
-
-
-
 
 newQuote()
 nextQuote.addEventListener("click",newQuote);
