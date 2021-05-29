@@ -3,6 +3,8 @@ let nextQuote = document.querySelector("#nextQuote");
 let saveNewQuote = document.querySelector("#saveNewQuote")
 let authorlist = document.querySelector(`#quoteAuthorHelper`)
 let newQoteModal = new bootstrap.Modal(document.getElementById('newQoteModal'))
+let authorInput = document.querySelector(`#quoteAuthorInput`)
+
 let quotes = {
   formers: [],
   lists: [],
@@ -15,37 +17,46 @@ let quotes = {
     return toReturn
    }
   },
+  matchedAlikeQuote (authorVal){return quotes.lists.filter(({author})=>author.toLowerCase().includes(authorVal.toLowerCase()))},
+  matchAnAuthor (authorVal){return quotes.lists.filter(({author})=>author.toLowerCase()===authorVal.toLowerCase())},
   optionHelperGen(authorTofind){
     let buttons =[]
-
-    let matchedQuote =(authorVal)=> quotes.lists.filter(({author})=>author.toLowerCase().includes(authorVal.toLowerCase()))
     let createOption =(text)=>{ 
       let opt =  Object.assign(document.createElement("button"), {
         className: "list-group-item list-group-item-action",
         ariaCurrent:"true",
         type:"button",
-        onclick:(e)=>{
-          document.querySelector(`#quoteAuthorInput`).value= opt.textContent
-          document.querySelector(`#quoteAuthorHelper`).innerHTML=``
-        },
+       
         textContent: 	text}
       )
+      opt.onclick=(e)=>{
+        document.querySelector(`#quoteAuthorInput`).value= opt.textContent
+        document.querySelector(`#quoteAuthorHelper`).innerHTML=``
+        activeDisactivForm()
+      }
       opt.style.width=`${document.querySelector(`#quoteAuthorInput`).clientWidth}px`
-
       return opt
     }
-
-    let sameAuthorIndexs =()=> matchedQuote(opt.textContent).map(quote=>quotes.lists.indexOf(quote))
-
-    
-
-    matchedQuote(authorTofind).forEach(({author})=>{
+    quotes.matchedAlikeQuote(authorTofind).forEach(({author})=>{
       let alreadyIn = buttons.some( button => button.textContent==author)
       if(!alreadyIn){
         buttons.push(createOption(author))
       }
     })
+   
+    buttons.sort((a,b) => (a.textContent > b.textContent) ? 1 : ((b.textContent > a.textContent) ? -1 : 0))
+
     return buttons
+  },
+  createEmptyOption(){ 
+    let opt =  Object.assign(document.createElement("button"), {
+      className: "list-group-item list-group-item-action disabled",
+      ariaCurrent:"true",
+      type:"button",
+      textContent: 	"no matched othor"}
+    )
+    opt.style.width=`${document.querySelector(`#quoteAuthorInput`).clientWidth}px`
+    return opt
   },
   
   currentPosition: -1
@@ -63,7 +74,7 @@ class Quote {
 
   feedElem() {
     this.elemMainDom = Object.assign(document.createElement("div"), {
-      className: "py-4 quoteText d-flex flex-column align-items-center border border-white rounded",
+      className: "mb-2 py-4 quoteText d-flex flex-column align-items-center border border-white rounded",
     });
     this.openQuoteSign = Object.assign(document.createElement("i"), {
       className: "fas fa-quote-left pe-2",
@@ -213,24 +224,44 @@ new Quote({
 });
 
 
-let feedHelper = (e)=>{
 
-  let input = e.target
-  let curentLooked = input.value
-  console.log(quotes.lists.filter(({author})=>author.toLowerCase()==curentLooked.toLowerCase()).length==0)
+
+let feedHelper = (e)=>{
+  let curentLooked = authorInput.value
   if(quotes.lists.filter(({author})=>author.toLowerCase()==curentLooked.toLowerCase()).length==0){
     authorlist.innerHTML=``
-    
-    let opts = quotes.optionHelperGen(curentLooked,input)
-    if(opts.length>0){
-      opts.forEach(buton=>authorlist.append(buton))
+    let opts = quotes.optionHelperGen(curentLooked)
+    console.log(opts.length==0)
+    if(opts.length==0){
+      authorlist.appendChild(quotes.createEmptyOption())
     }else{
-
+      opts.forEach(buton=>{authorlist.appendChild(buton);})
     }
   }
-  
-}
 
+  activeDisactivForm()
+}
+let activeDisactivForm = ()=>{
+  let sameAuthorQuotes = quotes.matchAnAuthor(authorInput.value)
+  let authorForm = document.querySelector(`#authorFind`)
+  // document.querySelector(`#quoteAuthorHelper`).innerHTML=``
+  if(sameAuthorQuotes.length==0){
+    document.querySelector(`#authorFindSubmitter`).classList.add("disabled")
+    authorForm.onsubmit  = (e)=>{
+      return false
+    }
+
+  }else{
+    document.querySelector(`#authorFindSubmitter`).classList.remove("disabled")
+    document.querySelector(`#quoteAuthorHelper`).innerHTML=``
+    authorForm.onsubmit  = (e)=>{
+      document.querySelector(`#quotesList`).innerHTML = "";
+
+      sameAuthorQuotes.forEach(e=>e.feedElem())
+      return false
+    }
+  }
+}
 let feedOutHelper = (e)=>{
   const isNotHover = document.querySelector('#quoteAuthorHelper:hover')=== null
   if(isNotHover){
@@ -244,13 +275,10 @@ let newQuote = (e)=>{
     quotes.currentPosition ++
     if(quotes.currentPosition-1==quotes.formers.length-1){
       quotes.currentQuote = quotes.getARandomQuote()
-      console.log(quotes.currentQuote)
-
       quotes.formers.push(quotes.currentQuote)
     }else{
       quotes.currentQuote  = quotes.formers[quotes.currentPosition]
     }
-    console.log(quotes.currentQuote)
     quotes.currentQuote.feedElem()
     quotes.currentPosition==0
     ?previousButton.classList.add("disabled")
@@ -292,10 +320,5 @@ newQuote()
 nextQuote.addEventListener("click",newQuote);
 previousButton.addEventListener("click",newQuote);
 saveNewQuote.addEventListener(`click`,addAquote)
-
-let authorInput = document.querySelector(`#quoteAuthorInput`)
-
 authorInput.addEventListener("input",feedHelper)
 authorInput.addEventListener("focusout",feedOutHelper)
-
-
