@@ -1,0 +1,30 @@
+html,body{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-brand{
+    font-family: 'SEGA LOGO FONT', sans-serif;
+
+}
+.navbar{
+    background-color: #6ADF82;
+}
+
+#main{
+    min-height: 100vh;
+
+    background-image: url("./circuit-pattern.png");
+    background-color: #6556CD;
+}
+.card{
+    background-image: url("./card-pattern.png");
+    background-color: #4FC1C5; 
+    color: #2E3D36;
+    width: 26%;
+
+}
+.avatar{
+    background-color: #303952;
+}
