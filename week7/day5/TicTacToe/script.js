@@ -19,18 +19,18 @@ let oPosition = () => positions().map((e,index)=>{if(e=="O"){return index}}).fil
 let getBestNextMove = ()=>{
   let xposts = xpositions()
   let bestNexMove = winCombos.filter(e=>!xposts.some(e2=>e.includes(e2)))
+  let bestNextMovesMatchAllO = [...bestNexMove]
   if(oPosition().length>0){
-    bestNexMove = bestNexMove.filter(e=>oPosition().every(el=>e.includes(el)))
+    bestNextMovesMatchAllO = bestNextMovesMatchAllO.filter(e=>oPosition().every(el=>e.includes(el)))
   }
-  console.log(bestNexMove)
   let counts = {};
-  for (let i = 0; i < bestNexMove.length; i++) {
-      let currentArr = bestNexMove[i]
+  for (let i = 0; i < bestNextMovesMatchAllO.length; i++) {
+      let currentArr = bestNextMovesMatchAllO[i]
       currentArr.forEach(element => {
         if(!counts.hasOwnProperty(element)){
           counts[element] = {}
           counts[element].position=element
-          counts[element].arr = bestNexMove.filter(e=>e.includes(element))
+          counts[element].arr = bestNextMovesMatchAllO.filter(e=>e.includes(element))
         }
       });
   }
@@ -40,43 +40,58 @@ let getBestNextMove = ()=>{
   counts.forEach(element => {
     if(element.arr.length>previousLength&&!(oPosition().includes(element.position))){
       previousLength = element.arr.length
-      bestMatch = element
+      bestMatch = element.position
     }
   });
+  console.log(bestMatch)
   if(bestMatch==undefined){
+    bestNexMove.forEach(element => {
+      let bestChances = bestNexMove.filter(e=>oPosition().some(el=>e.includes(el)))
+      console.log(bestChances.length)
+      if(bestChances.length==0){
+        for (let index = 0; index < boxs.length; index++) {
+          const element = boxs[index];
+          if(element.textContent==``){
+            bestMatch = index
+            break;
+          }
+        }
+        console.log(bestMatch)
+
+      }else{
+        bestMatch =bestChances[0].filter(e=>!oPosition().includes(e))[0]
+        console.log(bestChances[0].filter(e=>!oPosition().includes(e))[0])
+
+      }
+
+    });
+    if(bestMatch==undefined){
+      return("end")
+    }
     // !je suis laaaaaaaaaaaaaaaaaaaaaaaaaa
   }
+  console.log(bestMatch)
+
   return bestMatch
 }
-let  arrayEquals = (a, b)=>{
-  return Array.isArray(a) &&
-    Array.isArray(b) &&
-    a.length === b.length &&
-    a.every((val, index) => val === b[index]);
+let  matchAwin = (array1,array2)=>{
+  let match = 0
+  array1.forEach(element => {
+    if(array2.includes(element)){match++}
+  });
+  return match>2
+
 }
 
 let winnerShower = (e) =>{ 
-  document.querySelectorAll(`.modal-body`).textContent = e
+  document.querySelector(`.modal-body`).textContent = e
   winnerModal.show()
 
   newGame.classList.remove("d-none")
   for (let index = 0; index < boxs.length; index++) {
     boxs[index].onmousedown= e=> false
   }
-  for (let index = 0; index < boxs.length; index++) {
-    const element = boxs[index];
-    element.onmousedown = (e)=>{
-      
-      let currentElem = e.target
-      currentElem.textContent="X"
-      if(winCombos.some(e=>arrayEquals(e,xpositions()))){
-        winner
-      }else{
-        boxs[getBestNextMove().position].textContent = "O"
-      }
-    }
-    
-  }
+  setUpTheGame()
 }
 
 newGame.onmousedown = (e) =>{ 
@@ -86,21 +101,28 @@ newGame.onmousedown = (e) =>{
   newGame.classList.add("d-none")
 }
 
-for (let index = 0; index < boxs.length; index++) {
-  const element = boxs[index];
-  elms.push(element)
 
-  element.onmousedown = (e)=>{
-    let currentElem = e.target
-    currentElem.textContent="X"
-    if(winCombos.some(e=>arrayEquals(e,xpositions()))){
-      winnerShower("Good Job You Won!")
-    }else{
-      boxs[getBestNextMove().position].textContent = "O"
-      if(winCombos.some(e=>arrayEquals(e,oPosition()))){
-        winnerShower("Sorry the computer Won, try again")
+let setUpTheGame = ()=>{
+  for (let index = 0; index < boxs.length; index++) {
+    const element = boxs[index];
+    elms.push(element)
+  
+    element.onmousedown = (e)=>{
+      let currentElem = e.target
+      currentElem.textContent="X"
+      if(winCombos.some(e=>matchAwin(e,xpositions()))){
+        winnerShower("Good Job You Won!")
+      }else{
+        let index = getBestNextMove()
+        index=="end"
+        ? winnerShower("The game is tied")
+        :boxs[index].textContent = "O"
+        if(winCombos.some(e=>matchAwin(e,oPosition()))){
+          winnerShower("Sorry the computer Won, try again")
+        }
       }
     }
+    
   }
-  
 }
+setUpTheGame()
