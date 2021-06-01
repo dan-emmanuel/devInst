@@ -1,0 +1,28 @@
+body{
+    background-color: #3498FC;
+    width: 100vw;
+    height: 100vh;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    width: 50vh;
+    height: 50vh;
+    margin: auto;
+    margin-top: 20vh;
+    background-color: black;
+    grid-gap: 3px;
+ 
+
+}
+
+.box{
+    box-sizing: border-box;
+    background-color: #3498FC ;
+    color: black;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold
+}
