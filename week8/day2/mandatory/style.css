@@ -1,0 +1,10 @@
+form{
+    display: flex;
+    flex-direction: column  ;
+    width: 30%;
+}
+
+#submiter{
+    width: 20%;
+    margin-top: 5% ;
+}
