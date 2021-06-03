@@ -5,22 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="./result.html"  method="get">
-        <div>
-            <label for="name">NAME</label>
-            <input type="text" id="name" name="name"></input>
-        </div>
-        <div>
-            <label for="lastName">LASTNAME</label>
-            <input type="text" id="lastName" name="lastName"></input>
-            <input id="submiter" type="submit" value="send">
-        </div>
-       
+    <form id="getACat">
+        <input type="text" name="cat" >
+        <input type="submit" value="get gif cat"></input>
     </form>
+    <button id="reseter">Reset</button>
+    <div id="gifToShow">
 
-    <script src="./main.js"></script>
+    </div>
+
     
+    <script src="main.js"></script>
 </body>
 </html>
