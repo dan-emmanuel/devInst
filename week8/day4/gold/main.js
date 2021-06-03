@@ -1,25 +1,22 @@
-let data = window.location.search.substr(1).split('&').flatMap(e=>e.split("="))
-let newDiv,p1,p2
-
-let mainDiv =  document.querySelector(`#result`) 
-for (let index = 0; index < data.length; index++) {
-    const element = data[index];
-   console.log(index%2)
-    console.log(newDiv)
-    if (index%2==0) {
-         newDiv = document.createElement("div")
-
-         p1 = document.createElement("span")
-        p1.textContent = `${element} :`
-        newDiv.append(p1)
-    }else{
-        p2 = document.createElement("span")
-        p2.textContent = ` ${element} `
-        newDiv.append(p2)
-    }
-
-    mainDiv.append(newDiv)
 
 
+let getdata = (params)=>{
+  var url = new URL("https://api.giphy.com/v1/gifs/search")
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
+    return fetch(url).then(e=>e.json()).then(result=>result.data)
 }
+let random = (arr)=>arr[Math.floor(Math.random() * arr.length)];
+let createagif = ({images:{original},title})=>{return Object.assign(document.createElement("img"),{alt:title,src:original.url,width:"250"} )}
+let executeAfter = e=>{ 
+  let container =   document.querySelector(`#gifToShow`)
+  container.innerHTML=""
+  container.append( createagif(random(e)))}
+
+
+ document.querySelector("#gifGen").onmousedown  =(e)=> getdata(  params = {q:"hilarious",rating:"g",api_key:"hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My"}).then(executeAfter)
+
+
+
+
+
 
