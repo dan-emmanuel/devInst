@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+		<link href="http://fonts.cdnfonts.com/css/sega-logo-font" rel="stylesheet">
+
+	<link rel="stylesheet" href="./stye.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<title>Document</title>
+</head>
+
+
+<body>
+	<nav class="navbar row justify-content-center">
+		<h1 class="text-center text-white fs-1 fw-bold  col-auto">Simple Weasther App</h1>
+		<div class="col-auto">
+		  <form class="d-flex" id="city">
+			<div class="input-group  input-group-lg">
+			
+				<input name = "city"  type="text" class="form-control border-end-0" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+				<button type="submit" class="searchbtn btn btn btn-light border-start-0 bg-white" type="button" id="button-addon1"><i class="fas fa-search"></i></button>
+			</div>
+			  
+		  </form>
+		</div>
+		<div class="col-auto">
+			<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+				<input type="radio" class="btn-check" name="unit"   id="valueK" value="default" autocomplete="off" checked>
+				<label class="btn btn-outline-primary" for="valueK">K</label>
+			  
+				<input type="radio" class="btn-check" name="unit"  id="valueC" value="metric"  autocomplete="off">
+				<label class="btn btn-outline-primary" for="valueC">°C</label>
+			  
+				<input type="radio" class="btn-check" name="unit" id="valueF" value="imperial"  autocomplete="off">
+				<label class="btn btn-outline-primary" for="valueF">°F</label>
+			  </div>
+		</div>
+	
+	</nav>
+	<div class="container mt-4">
+		
+		
+		<div id ="cards" class="row justify-content-center">
+			<!-- <div class="col-4">
+				<div class="card">
+					<div class="card-header d-flex">
+						<h5 class="card-title col">Paris  <span class="badge  bg-primary">Fr</span></h5> 
+						<button type="button col" class="btn-close" aria-label="Close"></button>
+					</div>
+				<div class="card-body">
+					<div class="text-center mb-0">
+						<img src="http://openweathermap.org/img/wn/10d@2x.png" width="100px" height="100px" alt="">
+
+					</div>
+					<p class="card-text timeIcon text-center mb-0">
+						49°C
+					</p>
+					<p class="card-text text-uppercase fw-1 text-center">
+						scattered cloud
+					</p>
+				</div>
+				</div>
+			</div> -->
+			<img src="http://openweathermap.org/img/wn/01d@2x.png" width="0" height="0">
+		</div>
+
+
+	</div>
+	<div class="modal" id = "errorModal" tabindex="-1">
+		<div class="modal-dialog">
+		  <div class="modal-content bg-danger text-white">
+			
+			<div class="modal-body text-center">
+			  <p id = "errorMessage" >Modal body text goes here.</p>
+			  <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+
+			</div>
+
+		  </div>
+		</div>
+	  </div>
+	<!-- JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		crossorigin="anonymous"></script>
+	<script src="./script.js"></script>
+</body>
+
+</html>
