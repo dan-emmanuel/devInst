@@ -1,0 +1,19 @@
+body{
+    background-color: #091F43;
+}
+
+.navbar{
+    background-color: #8F71FF;
+}
+
+.searchbtn{
+    border: 1px solid #ced4da;
+}
+
+.timeIcon{
+    font-size: 5em;
+}
+
+.form-check-input{
+    float: none !important;
+}
