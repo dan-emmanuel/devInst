@@ -1,25 +1,13 @@
-let makeAllCaps = async (array)=>{
-  return await array.map(word=>{
-    if(typeof word=="string"){
-      return word.toUpperCase()
-    }else{
-      throw new Error(`${word} is not a word`)
-    }
-  })
-}
+const promise1 = Promise.resolve(3);
+const promise2 = 42;
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 'foo');
+});
+// expected output: Array [3, 42, "foo"]
 
 
-let sortWords = async (array)=>{return await array.sort()}
-
-arrayOfWords = ["avocado","tomato","cucumber"]
-complicatedArray = [true,1,"mama"]
-
-makeAllCaps(arrayOfWords)
-.then(sortWords)
-.then((result) => console.log(result))
-.catch(error => console.error(error))
-
-makeAllCaps(complicatedArray)
-.then(sortWords)
-.then((result) => console.log(result))
-.catch(error => console.error(error))
+Promise.all([promise1, promise2, promise3]).then(values => {
+  console.log(values);
+}, reason => {
+  console.log(reason)
+});
