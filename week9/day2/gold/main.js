@@ -1,20 +1,25 @@
-const urls = [
-  'https://swapi.dev/api/people/1',
-  'https://swapi.dev/api/people/2',
-  'https://swapi.dev/api/people/3',
-  'https://swapi.dev/api/people/4'
-]
+let makeAllCaps = async (array)=>{
+  return await array.map(word=>{
+    if(typeof word=="string"){
+      return word.toUpperCase()
+    }else{
+      throw new Error(`${word} is not a word`)
+    }
+  })
+}
 
 
-Promise.all( urls.map(e=>fetch(e))).then(responses => responses.forEach((response,index) => console.log(index,response)));
+let sortWords = async (array)=>{return await array.sort()}
 
-const url2 = [
-  'https://swapi.dev/api/people/34',
-  'https://swapi.dev/api/people/2',
-  'https://swapi.dev/api/people/3',
-  'https://swapi.dev/api/people/4'
-]
+arrayOfWords = ["avocado","tomato","cucumber"]
+complicatedArray = [true,1,"mama"]
 
-Promise.all( url2.map(e=>fetch(e)))
-.then(responses => responses.forEach((response,index) => console.error(index,response)))
-.catch(e=>{error.log(e)});
+makeAllCaps(arrayOfWords)
+.then(sortWords)
+.then((result) => console.log(result))
+.catch(error => console.error(error))
+
+makeAllCaps(complicatedArray)
+.then(sortWords)
+.then((result) => console.log(result))
+.catch(error => console.error(error))
