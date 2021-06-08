@@ -1,20 +1,35 @@
-const urls = [
-  'https://swapi.dev/api/people/1',
-  'https://swapi.dev/api/people/2',
-  'https://swapi.dev/api/people/3',
-  'https://swapi.dev/api/people/4'
-]
+let resolveAfter2Seconds = function () {
+  console.log("starting slow promise");
+  return new Promise(resolve => {
+      setTimeout(function () {
+          resolve("slow");
+          console.log("slow promise is done");
+      }, 2000);
+  });
+};
 
+let resolveAfter1Second = function () {
+  console.log("starting fast promise");
+  return new Promise(resolve => {
+      setTimeout(function () {
+          resolve("fast");
+          console.log("fast promise is done");
+      }, 1000);
+  });
+};
 
-Promise.all( urls.map(e=>fetch(e))).then(responses => responses.forEach((response,index) => console.log(index,response)));
+let sequentialStart = async function () {
+  console.log('==SEQUENTIAL START==');
+  const slow = await resolveAfter2Seconds();
+  console.log(slow);
+  const fast = await resolveAfter1Second();
+  console.log(fast);
+}
 
-const url2 = [
-  'https://swapi.dev/api/people/34',
-  'https://swapi.dev/api/people/2',
-  'https://swapi.dev/api/people/3',
-  'https://swapi.dev/api/people/4'
-]
+sequentialStart()
 
-Promise.all( url2.map(e=>fetch(e)))
-.then(responses => responses.forEach((response,index) => console.error(index,response)))
-.catch(e=>{error.log(e)});
+// will log  '==SEQUENTIAL START==' then 
+// "starting slow promise"
+// then "slow" then "slow promise is done" 
+// then fast
+// then "fast promise is done"
