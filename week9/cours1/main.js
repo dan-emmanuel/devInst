@@ -1,29 +1,6 @@
 
 
 
-
-// let compareToTen = (number)=>{
-//     return  new Promise((resolve, reject) => {
-//         number<=10
-//             ?resolve(number<10
-//                 ?`${number} is smaller than 10`
-//                 :`${number} is equal to 10`)
-
-//             :reject(`${number} is smaller than 10`)
-//       });
-// }
-
-// compareToTen(5)
-//     .then(e=>console.log(e))
-//     .catch(e=>console.log(e))
-// compareToTen(10)
-//     .then(e=>console.log(e))
-//     .catch(e=>console.log(e))
-// compareToTen(11)
-//     .then(e=>console.log(e))
-//     .catch(e=>console.log(e))
-
-
 let capitalise = (array)=>{
     let arrayToReturn  = []
     return new Promise((resolve, reject) => {
