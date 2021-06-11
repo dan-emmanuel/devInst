@@ -1,0 +1,63 @@
+html{
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url("https://i.giphy.com/media/TxVVB6PfWMjE4/200.webp");
+}
+
+.img-responsive.logo{
+    width: 20vw;
+    margin-left: 40vw;
+}
+
+.box{
+    border: 10px solid #FFE81F;
+    width: 50vw;
+    margin-left: 25vw;
+    border-radius: 10px;
+}
+.btn{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left: 40%;
+    margin-top: 5%;
+    font: Arial;
+    width :20%
+
+}
+p,h1,i{
+    color: white;
+}
+h1{
+  text-align: center;  
+}
+.row{
+    display: none; 
+    justify-content: center;
+    width: 50%;
+    margin-left: 25%;
+}
+#loader{
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    display: none;
+
+}
