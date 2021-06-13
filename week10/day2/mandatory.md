@@ -2,12 +2,8 @@
 
 #ex 1
 
-```
-SELECT 
-id,name,price
-from public.items
-where 
-price>80
-```
 
 
+| Tables         querry  |
+| ------------- | -----:|
+| col 3 is      | ```SELECT id,name,pricefrom public.itemswhere price>80``` |
