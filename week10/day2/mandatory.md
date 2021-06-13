@@ -1,15 +1,8 @@
-#Heading 
-##Heading 2
-###Heading 3
-####Heading 4
-#####Heading 5
-######Heading 6SELECT 
-id,name,price
-from public.items
-where 
-price>80
 
-
+First Header | Second Header
+------------ | -------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
 
 
 
