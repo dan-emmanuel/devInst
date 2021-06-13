@@ -16,7 +16,7 @@ CREATE TABLE students (
 	birth_date date 
 	)
 ```
-# Create
+# Insert
 ## question 1
 ```
 INSERT INTO public.students (last_name,first_name , birth_date)
