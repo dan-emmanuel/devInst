@@ -1,3 +1,3 @@
-let axios = require('axios');
+const users = require('./module.js')
 
-console.log(axios)
+users.user("Clementina").then(console.log)
