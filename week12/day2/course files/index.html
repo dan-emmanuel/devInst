@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>Method Get</h2>
+    <form action="http://localhost:8000/login" method="GET">
+      username: <input type="text" name="username" value="">
+      password: <input type="password" name="password" value="">
+      <input type="submit" name="" value="Send GET request">
+    </form>
+    <h2>Method Post</h2>
+    <form action="http://localhost:8000/login" method="POST">
+      username: <input type="text" name="username" value="">
+      password: <input type="password" name="password" value="">
+      <input type="submit" name="" value="Send Post request">
+    </form>
+    <h2>Fetch server</h2>
+    username: <input type="text" name="username" id="username" value="">
+    password: <input type="password" name="password" id="password" value="">
+    <button type="button" onClick=fetchData()>Fetch Data</button>
+    <div id='root'></div>
+    <a href="about.html">About</a>
+    <script src="main.js" charset="utf-8"></script>
+  </body>
+</html>
