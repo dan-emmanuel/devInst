@@ -1,0 +1,19 @@
+{
+  "name": "serverwithdb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "serverWithDb",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "knex": "^0.95.6",
+    "pg": "^8.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.8"
+  }
+}
