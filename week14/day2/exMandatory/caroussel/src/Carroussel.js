@@ -10,14 +10,14 @@ class CarouselType extends Component {
             r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
             return images;
         }
-        const images = importAll(require.context('../public/assets', false, /\.(png|jpe?g|svg)$/));
+        const images = importAll(require.context('../public/assets', false, /\.(jpe?g|wbp)$/));
 
         let elems = this.props.assets.map((asset,index)=>{
 
             console.log(images)
             return (
-                <div style = {{maxHeight:"50vh"}} key = {index}>
-                    <img src={images[`${asset.image}`].default} height="100%" alt={asset.name}/>
+                <div style={{maxHeight:"100vh"}} key = {index}>
+                    <img src={images[`${asset.image}`].default} alt={asset.name}/>
                     <p className="legend">{asset.name}</p>
                 </div>
             )
@@ -26,7 +26,7 @@ class CarouselType extends Component {
         return (
             
 
-            <Carousel>
+            <Carousel showArrows={true} >
                
                 {elems}
             </Carousel>
