@@ -6,7 +6,7 @@ let Cards = ({data,randomIndexGen,color})=>{
 
     return (
         <div className="quotebox" >
-            <div className="fadeIn" >
+            <div className={"fadeIn"} >
                 <h1 style={{color:color}} id="quote">"{data.quote}"</h1>
                 <h5 style={{color:color}} id="author">-{data.author}-</h5>
             </div>
