@@ -3,19 +3,19 @@ import CarouselType from './Carroussel';
 import './App.css';
 let images = [
   {
-    image:"shangai.jpg",
+    image:"assets/shangai.jpg",
     name:"shangai"
   },
   {
-    image:"macao.jpg",
+    image:"assets/macao.jpg",
     name:"macao"
   },
   {
-    image:"japan.jpg",
+    image:"assets/japan.jpg",
     name:"japan"
   },
   {
-    image:"lasVegas.jpg",
+    image:"assets/lasVegas.jpg",
     name:"Las Vegas"
   }
 ]

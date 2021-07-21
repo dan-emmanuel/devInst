@@ -19,9 +19,27 @@ app.get('/getCountries', function (req, res) {
     
     db(`country`)
     .select("*")
+    .orderBy('country', 'asc')
     .then(dbResp=>{
         res.setHeader('Content-Type', 'application/json');
         res.end(JSON.stringify(dbResp))
+    })
+    .catch(console.log)
+      
+})
+
+app.get('/cities/:countriId', function (req, res) {
+    
+    
+    let countryId = req.params.countriId
+    db(`city`)
+    .select("city_id","city")
+    .orderBy('city', 'asc')
+    .where('country_id', '=', countryId)
+    .then(dbResp=>{
+        console.log(dbResp)
+        res.setHeader('Content-Type', 'application/json');
+        res.send(dbResp)
     })
     .catch(console.log)
       
