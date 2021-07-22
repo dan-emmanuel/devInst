@@ -20,7 +20,7 @@ export default class ErrorHandler extends Component {
         if(this.state.errorInfo){
             return (
                 <>
-                    <h2>something wentWrong !!!!</h2>
+                  
                     <h1>{this.state.error.toString()}</h1>
                 </>
             )
