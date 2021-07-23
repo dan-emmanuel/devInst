@@ -17,7 +17,7 @@ export default class ErrorHandler extends Component {
         )
     }
     render() {
-        if(this.state.errorInfo){
+        if(this.state.error){
             return (
                 <>
                   

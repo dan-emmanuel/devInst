@@ -10,10 +10,11 @@ export default class ErrorBoundary extends Component {
     }
   
    
-  
+    
     componentDidCatch(error, errorInfo) {
         this.setState(
             {
+                hasError:true,
                 error:error,
                 errorInfo:errorInfo
             }

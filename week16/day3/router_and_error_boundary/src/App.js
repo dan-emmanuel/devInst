@@ -1,80 +1,66 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, NavLink} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ErrorBoundary from "./ErrorBoundary"
 
 
-let HomeScreen = () => {
-  return (
-    <>
-      
-      <ErrorBoundary>
-        <h1>Home</h1>
 
-      </ErrorBoundary>
-
-    </>
-  );
-};
-let ProfileScreen = () => {
-  return <>
-   <nav>
-        
-        
-      </nav>
-      <ErrorBoundary>
-        <h1>Profile Screen</h1>
-      </ErrorBoundary>
-  </>;
-};
-let ShopScreen = () => {
-  return <>
-      
-      
-        {new Error('Whoops!')}
-      </ErrorBoundary>
-  </>;
-};
 
 function App() {
+  let HomeScreen = () => {
+    return (
+      <>
+        <h1>Home</h1>
+      </>
+    );
+  };
+  let ProfileScreen = () => {
+    return  (
+    <>
+      <h1>Profile Screen</h1>
+    </>
+    )
+  };
+  
+  let ShopScreen = () => {
+    throw new Error('An error has occured')
+    
+  };
+  
   return (
     <div>
       <nav>
         <div className="list-group list-group-horizontal">
-          <Link className="list-group-item btn btn-outline-primary " to="/">
+          <NavLink className="list-group-item btn btn-outline-primary" activeClassName="active" to="/" exact>
             Home
-          </Link>
-          <Link className="list-group-item btn btn-outline-primary active" to="/profile">
+          </NavLink>
+          <NavLink className="list-group-item btn btn-outline-primary" activeClassName="active"   to="/profile">
             Ptofile
-          </Link>
-          <Link className="list-group-item btn btn-outline-primary" to="/shop">
+          </NavLink>
+          <NavLink className="list-group-item btn btn-outline-primary" activeClassName="active"  to="/shop">
             Shop
-          </Link>
+          </NavLink>
         </div>
         
       </nav>
+      
       <Switch>
         <Route path="/profile">
+         
           <ErrorBoundary>
-          <ProfileScreen />
+            <ProfileScreen />
           </ErrorBoundary>
         </Route>
         <Route path="/shop">
-          <>
+          
           <ErrorBoundary>
-
-          <ShopScreen />
+            <ShopScreen />
           </ErrorBoundary>
-
-          </>
         </Route>
-        <Route path="/">
+        <Route path="/" exact>
           <ErrorBoundary>
-
-          <HomeScreen />
+            <HomeScreen />
           </ErrorBoundary>
-
         </Route>
       </Switch>
     </div>
