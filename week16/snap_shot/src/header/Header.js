@@ -7,6 +7,22 @@ import Button from 'react-bootstrap/Button'
 
 
 const  Header = ()=>{
+
+    // searchAtag = ()=>{
+    //     const client = createClient('563492ad6f917000010000014e81efe1d3f74ae4bd5a92d1148b5e03');
+    //     const query = `${cat.charAt(0).toUpperCase()}${cat.slice(1)}`;
+
+    //     client.photos.search({ query, per_page: perPage  })
+    //     .then(photos => {
+    //     props.getDataFromApi(photos.photos)
+    //     // props.getDataFromApi(1)
+
+    //   });
+    // }
+
+
+
+
     return (
         <>
             <div className="row justify-content-center">

@@ -4,7 +4,7 @@ h2{
 }
 
 img:hover {
-    transform: scale(1.65);
+    transform: scale(1.15);
     transition: transform 1.25s;
 }
 
