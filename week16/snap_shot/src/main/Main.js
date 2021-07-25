@@ -4,9 +4,12 @@ import {connect} from 'react-redux'
 import {setDatas} from  '../redux/action'
 import { createClient } from 'pexels';
 import { useEffect } from 'react';
+import './main.css'
 
 const  Main = (props)=>{
     let { cat } = useParams();
+    let { perPage,setPerpage } = useParams(30);
+
     let { imgs } = props;
 
 
@@ -15,7 +18,7 @@ const  Main = (props)=>{
       const client = createClient('563492ad6f917000010000014e81efe1d3f74ae4bd5a92d1148b5e03');
       const query = `${cat.charAt(0).toUpperCase()}${cat.slice(1)}`;
 
-      client.photos.search({ query, per_page: 30  })
+      client.photos.search({ query, per_page: perPage  })
       .then(photos => {
         props.getDataFromApi(photos.photos)
         // props.getDataFromApi(1)
@@ -23,25 +26,31 @@ const  Main = (props)=>{
       });
       // Met à jour le titre du document via l’API du navigateur
       console.log(cat)
-    });
+    },[cat,perPage]);
     
     return (
         <>
-            <div className=" row justify-content-center">
-                <div className="col-4" > 
-                    <h2 className="text-center mt-3">{cat.charAt(0).toUpperCase() + cat.slice(1)}</h2>
-                    <div>
-                      {
-                        imgs.map(img=>{
-                          console.log(img)
-                          return (
-                            <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600"/>
-                          )
-                        })
-                      }
-                    </div>
-                </div>
+          <div className=" row justify-content-center">
+            <div className="col-4" > 
+                <h2 className="text-center mt-3">{cat.charAt(0).toUpperCase() + cat.slice(1)}</h2>
             </div>
+          </div>
+          <div> 
+            <buton onClick = {()=>{setPerpage(25)}}>25</buton>
+            <buton onClick = {()=>{setPerpage(30)}}>30</buton>
+            <buton onClick = {()=>{setPerpage(35)}}>35</buton>  
+
+          </div>
+          <div className=" d-flex justify-content-between flex-wrap">
+            {
+              imgs.map(img=>{
+                console.log(img)
+                return (
+                  <img className="m-1" key={img.id} src={img.src.medium} width="200px" height="200px"/>
+                )
+              })
+            }
+          </div>
         </>
     )
 }

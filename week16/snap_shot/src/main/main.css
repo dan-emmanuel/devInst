@@ -2,3 +2,13 @@ h2{
     color: #051c33;
     
 }
+
+img:hover {
+    transform: scale(1.65);
+    transition: transform 1.25s;
+}
+
+img:hover {
+
+    transition: transform 1.25s;
+}

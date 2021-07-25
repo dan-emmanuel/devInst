@@ -8,11 +8,12 @@ function App() {
     <BrowserRouter>
       <div className="container">
           <Header/>
-      </div>
 
       <Switch>
         <Route path="/:cat" component={Main} />
       </Switch>
+      </div>
+
     </BrowserRouter>
   );
 }
