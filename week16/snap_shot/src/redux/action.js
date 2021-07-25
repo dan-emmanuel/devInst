@@ -1,6 +1,6 @@
-export const getData = (value)=>{
+export const setDatas = (value)=>{
     return {
-        type:"getData",
+        type:"SETDATAS",
         payload: value
     }
 

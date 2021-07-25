@@ -11,7 +11,7 @@ function App() {
       </div>
 
       <Switch>
-        <Route path="/:cat" children={<Main/>} />
+        <Route path="/:cat" component={Main} />
       </Switch>
     </BrowserRouter>
   );

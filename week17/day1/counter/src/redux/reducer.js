@@ -1,14 +1,15 @@
 let initState = {
-  imgs: [],
-};
+    count: 0,
+  };
   
   export const reducer = (state = initState, action = {}) => {
     switch (action.type) {
-      case "SETDATAS":
-        console.log(action.payload)
-      return { ...state, imgs: action.payload };
+      case "CHANGECOUNT":
+        return { ...state, count: action.payload };
+      break;
       
       default:
       return { ...state };
     }
   };
+  
