@@ -3,6 +3,11 @@ export const setDatas = (value)=>{
         type:"SETDATAS",
         payload: value
     }
-
 }
 
+export const setPerPage = (value)=>{
+    return {
+        type:"SETPAGE",
+        payload: value
+    }
+}
