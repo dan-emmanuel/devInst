@@ -10,7 +10,7 @@ let Button = (props)=>{
     :"less"
     
     return (
-        <button onClick={(e)=>changeCount(e,count)} data-action={action} >{value}</button>
+        <button onClick={(e)=>changeCount(e,count)} style={{fontSize:"1.2em" ,width: "100px",height:"100px ",margin:"10px"}} data-action={action} >{value}</button>
     )
 }
 

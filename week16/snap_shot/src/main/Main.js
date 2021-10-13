@@ -16,7 +16,7 @@ const Main = (props) => {
     const client = createClient(
       "563492ad6f917000010000014e81efe1d3f74ae4bd5a92d1148b5e03"
     );
-    const query = `${cat.charAt(0).toUpperCase()}${cat.slice(1)}`;
+    const query = cat;
 
     client.photos.search({ query, per_page: perPage }).then((photos) => {
       props.setDataFromApi(photos.photos);

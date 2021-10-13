@@ -14,6 +14,7 @@ function App() {
           alignItems :"center",
           flexDirection:"column",
           backgroundColor:"#282d36",
+          fontSize:"5em"
           
       }} className="App">
       <Counter />

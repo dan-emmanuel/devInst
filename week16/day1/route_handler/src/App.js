@@ -1,12 +1,14 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import About from "./About";
 import Home from "./Home";
 import Users from "./Users";
+
 function App() {
   return (
+    
       <div>
         <nav>
           <ul>

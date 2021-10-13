@@ -1,7 +1,8 @@
 import React from 'react';
 import Cards from './components/Cards';
 import Input from './components/Input';
-
+import { connect } from 'react-redux';
+import {changeSearchText} from './redux/action'
 import 'tachyons';
 // import {robots} from './robots'
 
@@ -41,19 +42,19 @@ class App extends React.Component{
   }
   //
 
-  handleChange = (e)=> this.setState({searchText:e.target.value})
   componentDidUpdate(){
     console.log('componentDidUpdate');
   }
   render(){
     console.log('render');
-    const {name,robots,searchText} = this.state;
+    const {name,robots} = this.state;
+    const{searchText,handleChange} = this.props
     const filterRobots = robots.filter(robot=>robot.name.toLowerCase().includes(searchText.toLowerCase()))
     return (
       <>
         <div>
           <h1>{name}</h1>
-        <Input handleChange={this.handleChange}/>
+        <Input handleChange={handleChange}/>
         </div>
         
         {
@@ -66,5 +67,18 @@ class App extends React.Component{
     );
   }
 }
+const mapStateToProps = (state)=>{
+  return {
+    searchText : state.searchText,
+  }
 
-export default App;
+  
+}
+const mapDispatchToProps = (dispatch)=>{
+  return {
+    handleChange:(e)=>{dispatch(changeSearchText(e.target.value))}
+  }
+}
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);

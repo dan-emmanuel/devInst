@@ -4,9 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Cards from './components/Cards'
+import {createStore,applyMiddleware,combineReducers} from 'redux'
+import {Provider} from 'react-redux'
+import {reducer} from './redux/reducer'
+import { createLogger } from 'redux-logger'
+const logger = createLogger({});
+const store = createStore(reducer,applyMiddleware(logger))
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

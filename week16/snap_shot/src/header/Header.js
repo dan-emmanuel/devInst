@@ -50,10 +50,10 @@ const  Header = (props)=>{
             </div>
             <div className=" row justify-content-center">
                 <div className="col-4 row justify-content-between" > 
-                    <NavLink className ="btn btn-dark col-auto" to="/mountains">Mountains</NavLink>
-                    <NavLink className ="btn btn-dark col-auto" to="/beaches">Beaches</NavLink>
-                    <NavLink className ="btn btn-dark col-auto" to="/birds">Birds</NavLink>
-                    <NavLink className ="btn btn-dark col-auto" to="/foods">Foods</NavLink>
+                    <NavLink className ="btn btn-outline-dark col-auto" activeClassName="active" to="/mountains">Mountains</NavLink>
+                    <NavLink className ="btn btn-outline-dark col-auto" activeClassName="active" to="/beaches">Beaches</NavLink>
+                    <NavLink className ="btn btn-outline-dark col-auto" activeClassName="active" to="/birds">Birds</NavLink>
+                    <NavLink className ="btn btn-outline-dark col-auto" activeClassName="active" to="/foods">Foods</NavLink>
                 </div>
             </div>
             

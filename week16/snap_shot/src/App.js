@@ -7,11 +7,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className="container">
-          <Header/>
+        <Header/>
 
-      <Switch>
-        <Route path="/:cat" component={Main} />
-      </Switch>
+        <Switch>
+          <Route path="/:cat" component={Main} />
+        </Switch>
       </div>
 
     </BrowserRouter>
