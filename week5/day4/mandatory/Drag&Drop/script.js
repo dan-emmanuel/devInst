@@ -1,4 +1,5 @@
 function allowDrop(ev) {
+    console.log(ev)
     ev.preventDefault();
   }
   

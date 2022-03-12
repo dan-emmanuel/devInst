@@ -17,13 +17,13 @@ class App extends Component {
   }
   
   fetchCountryData() {
-      return fetch('http://localhost:5000/getCountries')
+      return fetch('http://localhost:6001/getCountries')
       .then(response => response.json())
       
   }
 
   fetchcitiesData = (e)=> {
-    fetch(`http://localhost:5000/cities/${e.target.value}`)
+    fetch(`http://localhost:6001/cities/${e.target.value}`)
     .then(response => response.json())
     .then((e)=>{console.log(this);this.setState({cities:e})})
   }

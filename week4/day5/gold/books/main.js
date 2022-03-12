@@ -5,7 +5,6 @@ let allBooks = [
 		image :"./assets/hpot.jfif",
 		alreadyRead : true
 	},
-
 	{
 		title:"Sherlock holmes",
 		author : "Sir Arthur Conan Doyle",

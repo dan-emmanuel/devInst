@@ -3,12 +3,12 @@
 
 let compareToTen = (number)=>{
     return  new Promise((resolve, reject) => {
-        number<=10
-            ?resolve(number<10
-                ?`${number} is smaller than 10`
-                :`${number} is equal to 10`)
+        number<=10?resolve(number<10
+              ?`${number} is smaller than 10`
+              :`${number} is equal to 10`
+              )
 
-            :reject(`${number} is smaller than 10`)
+            :reject(`${number} is bigger than 10`)
       });
 }
 
@@ -49,7 +49,11 @@ const afterFour = new Promise((resolve,reject) => {
 
 
 
-let  after = new Promise( (resolve,reject)=>{setTimeout(() =>errGen?reject("Ooops something went wrong"):resolve("success"),4000)});
+let  after = new Promise( (resolve,reject)=>
+{setTimeout(() =>errGen
+  ?reject("Ooops something went wrong")
+  :resolve("success"),
+  4000)});
 
 Promise.resolve(after).then(success=(v)=> console.log(v), rej=(err)=>console.log(err))
 
@@ -65,3 +69,18 @@ toReturn()
 
 Promise.resolve(3).then(e=>console.log(e))
 Promise.reject("Boo").then(e=>{},e=>console.log(e))
+
+
+
+
+
+let compareToTen = (number)=>{
+
+      number<=10?resolve(number<10
+            ?`${number} is smaller than 10`
+            :`${number} is equal to 10`
+            )
+
+          :reject(`${number} is bigger than 10`)
+
+}

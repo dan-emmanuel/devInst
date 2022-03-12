@@ -8,15 +8,15 @@ let db = knex({
     version: '7.2',
     connection: {
       host : '127.0.0.1',
-      user : 'postgres',
+      user : 'localHost',
       password : 'D@n3mm@nu3l',
       database : 'dvdrental'
     }
 }); 
-
+console.log(12345678)
 
 app.get('/getCountries', function (req, res) {
-    
+    console.log(12345678)
     db(`country`)
     .select("*")
     .orderBy('country', 'asc')
@@ -45,6 +45,6 @@ app.get('/cities/:countriId', function (req, res) {
       
 })
    
-app.listen(5000)
+app.listen(6001)
 
   
